@@ -1,5 +1,6 @@
 USE Nybro;
 
+-- Kan let oversættes til laundry osv. 
 -- Initialiser boat table
 CREATE TABLE IF NOT EXISTS
 Boats (
