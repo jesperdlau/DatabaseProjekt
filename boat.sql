@@ -35,14 +35,14 @@ END;
 -- Update out of order
 CREATE OR REPLACE PROCEDURE set_boat_out_of_order (IN boat_name_ooo VARCHAR(20), IN ooo BOOLEAN)
 BEGIN
-    UPDATE Boats SET out_of_order=ooo WHERE boat_name=boat_name_ooo;
+    IF boat_name_ooo IN (SELECT boat_name FROM Boats) 
+        THEN UPDATE Boats SET out_of_order=ooo WHERE boat_name=boat_name_ooo; -- Only update boat if it exists.
+    ELSE
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Boat doesnt exists'; -- Else raise error
+    END IF;
 END;
 
 -- Test
 CALL set_new_boat("BrianTheBoat", "Kajak", False);
 CALL set_boat_out_of_order("McBoatFace", False);
 SELECT * FROM Boats;
-
-
-
-
