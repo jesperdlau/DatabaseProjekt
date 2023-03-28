@@ -27,6 +27,8 @@ DROP TABLE IF EXISTS BookingHistory;
 DROP TABLE IF EXISTS Item;
 
 
+
+
 -- #Table Creation
 CREATE TABLE Resident
 			(ResID		CHAR(5),
@@ -78,7 +80,7 @@ CREATE TABLE Boats
 
 
 CREATE TABLE BookingHistory
-			(BookID		    int(8) AUTO_INCREMENT,
+			(BookID		    varchar(8),
              TimeSlot	    varchar(20),
              PRIMARY KEY(BookID)
              );
@@ -121,6 +123,7 @@ CREATE TABLE Lives
              );
              
              
+
 
 
 
