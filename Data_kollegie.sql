@@ -24,7 +24,6 @@ INSERT Resident VALUES
 (03934, Johanne Torp, johanne@torp.family.dk, 2977226786, 65147817),
 (13732, Kristine Torp, kristine@torp.family.dk, 3196243048, 63825321);
 
-
 INSERT ROOMS VALUES
 (01, 1, A, False, False),
 (02, 1, A, False, False),
@@ -56,6 +55,15 @@ INSERT ROOMS VALUES
 (03, 2, B, True, False),
 (04, 2, B, True, True),
 (05, 2, B, True, False);
+
+
+INSERT Item VALUES
+("19821740", 'L01'),
+("4a42277d", 'L02'),
+("28ecf826", "L04"),
+("faw21440", 'B01'),
+("4a22212d", 'B02'),
+("98edw826", "B04");
 
 
 
