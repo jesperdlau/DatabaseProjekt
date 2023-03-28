@@ -1,6 +1,7 @@
-DROP PROCEDURE IF EXISTS updateBillsForResident;
+DROP PROCEDURE IF EXISTS updateBillForResident;
 DELIMITER ;;
-CREATE PROCEDURE updateBillForResident(IN thisResID char(5))
+
+CREATE PROCEDURE updateBillForResident(IN thisResID char(5), IN thisBillDate varchar(6))
 BEGIN
 	DECLARE LaundryPrice decimal(15,2);
     DECLARE BoatPrice decimal(15,2);
@@ -13,8 +14,8 @@ BEGIN
     FROM Booking NATURAL JOIN BookingHistory NATURAL JOIN Boats
     WHERE ResID = ThisResID);
     
-    UPDATE Bills SET Laundry = LaundryPrice WHERE ResID = thisResID;
-    UPDATE Bills SET Clubs = BoatPrice WHERE ResID = thisResID;
+    UPDATE Bills SET Laundry = LaundryPrice WHERE ResID = thisResID AND BillDate = thisBillDate;
+    UPDATE Bills SET Clubs = BoatPrice WHERE ResID = thisResID AND BillDate = thisBillDate;
 End;
 ;;
 DELIMITER ;
