@@ -7,7 +7,7 @@ BEGIN
     DECLARE BoatPrice decimal(15,2);
 
     SET LaundryPrice = (SELECT SUM(Price) 
-    FROM Booking NATURAL JOIN BookingHistory NATURAL JOIN Laundry
+    FROM Booking NATURAL JOIN BookingHistory NATURAL JOIN LaundryRoom
     WHERE ResID = ThisResID);
     
     SET BoatPrice = (SELECT SUM(Price) 
@@ -15,7 +15,7 @@ BEGIN
     WHERE ResID = ThisResID);
     
     UPDATE Bills SET Laundry = LaundryPrice WHERE ResID = thisResID AND BillDate = thisBillDate;
-    UPDATE Bills SET Clubs = BoatPrice WHERE ResID = thisResID AND BillDate = thisBillDate;
+    UPDATE Bills SET ClubsTotal = BoatPrice WHERE ResID = thisResID AND BillDate = thisBillDate;
 End;
 ;;
 DELIMITER ;

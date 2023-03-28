@@ -2,8 +2,6 @@ DROP PROCEDURE IF EXISTS createBills;
 
 SET @rentSingleRoom = 2700;
 SET @rentDoubleRoom = 4500;
-SET @Water = 100;
-SET @Electricity = 200; 
 SET @Internet = 50;
 
 DELIMITER ;;
