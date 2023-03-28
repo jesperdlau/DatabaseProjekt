@@ -69,7 +69,6 @@ CREATE TABLE Rooms
              PRIMARY KEY (RoomNr, KitchenNr, BuildingID),
              );
             
-            
 CREATE TABLE Bills
 			(ResID       varchar(2),
 			 Rent        decimal(15,2),
@@ -81,8 +80,6 @@ CREATE TABLE Bills
              PRIMARY KEY(ResID)
             );
             
-            
-
             
 CREATE TABLE Booking
 			(ResID       varchar(2),
