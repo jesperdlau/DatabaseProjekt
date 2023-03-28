@@ -1,9 +1,11 @@
 -- ###Project 1
--- #Authors: Carl Nørlund, Rasmus Torp
+-- #Authors: Carl Nørlund, Rasmus Torp, Jesper Lauridsen, Sara Maria Bjørn Andersen, Bressel
 
 -- ## Fremtidens Kollegie Fællesskab / Dorm of the Future
 
 -- #CREATE SHOULD ONLY RUN ONCE
+
+DROP DATABASE IF EXISTS Kollegiedb;
 CREATE DATABASE KollegieDB;
 
 
@@ -43,7 +45,9 @@ CREATE TABLE Lives
              KitchenNr	VARCHAR(2),
              BuildingID	VARCHAR(2),
              PRIMARY KEY(ResID),
-             FOREIGN KEY (RoomNr, KitchenNr, BuildingID) REFERENCES Rooms(RoomNr, KitchenNr, BuildingID)
+             FOREIGN KEY (KitchenNr) REFERENCES Rooms(KitchenNr),
+             FOREIGN KEY (RoomNr) REFERENCES Rooms(RoomNr),
+             FOREIGN KEY (BuildingID) REFERENCES Rooms(BuildingID)
              );
              
 CREATE TABLE Building
@@ -58,7 +62,7 @@ CREATE TABLE Kitchen
 			(KitchenNr    varchar(2),
              BuildingID   varchar(2),
              Budget       decimal(15,2),
-             PRIMARY KEY(KitchenNr, BuildingID),
+             PRIMARY KEY(KitchenNr, BuildingID)
              );
 
 CREATE TABLE Rooms
@@ -66,18 +70,21 @@ CREATE TABLE Rooms
 			 KithcenNr   varchar(2),
              BuildingID  varchar(2),
              Inhabited   bool,
-             PRIMARY KEY (RoomNr, KitchenNr, BuildingID),
+             DoubleRoom  bool,
+             PRIMARY KEY (RoomNr, KitchenNr, BuildingID)
              );
             
 CREATE TABLE Bills
-			(ResID       varchar(2),
+			(BillID     varchar(16),
+             ResID       varchar(2),
+			 BillDate    varchar(16),   
 			 Rent        decimal(15,2),
              Electricity decimal(15,2),
              Water       decimal(15,2),
              Internet    decimal(15,2),
              Laundry     decimal(15,2),
              Clubs       decimal(15,2),
-             PRIMARY KEY(ResID)
+             PRIMARY KEY(BillID)
             );
             
             
