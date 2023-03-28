@@ -86,21 +86,6 @@ CREATE TABLE Bills
              Clubs       decimal(15,2),
              PRIMARY KEY(BillID)
             );
-            
-            
-CREATE TABLE Booking
-			(ResID       varchar(2),
-			 BookID		 varchar(4),
-             TimeSlot	 varchar(20),
-             PRIMARY KEY(ResID, BookID, TimeSlot)
-             );
-
-CREATE TABLE Laundry
-			 (BookID		varchar(4),
-			  LaundryType	varchar(10),
-              OutOfOrder	varchar(6),
-              primary key(BookID)
-              );
 
 CREATE TABLE Laundry 
             (ItemID         VARCHAR(3),
