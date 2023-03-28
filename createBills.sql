@@ -17,11 +17,11 @@ BEGIN
     
     IF doubleroom THEN
 		INSERT INTO Bills
-		VALUES (thisBillID, thisResID, thisBillDate, rentDoubleRoom, Electricity, Water, Internet, 0, 0);
+		VALUES (thisBillID, thisResID, thisBillDate, rentDoubleRoom, Internet, NULL, NULL);
 		
 	ELSE
 		INSERT INTO Bills
-        VALUES (thisBillID, thisResID, thisBillDate, rentSingleRoom, Electricity, Water, Internet, 0, 0);
+        VALUES (thisBillID, thisResID, thisBillDate, rentSingleRoom, Internet, NULL, NULL);
 
 END;
 ;;    
