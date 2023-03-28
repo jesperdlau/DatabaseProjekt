@@ -28,8 +28,6 @@ DROP TABLE IF EXISTS Item;
 
 
 -- #Table Creation
-
-
 CREATE TABLE Resident
 			(ResID		CHAR(5),
 			 NameRes	VARCHAR(30),
@@ -46,7 +44,7 @@ CREATE TABLE Rooms
              Inhabited   bool,
              DoubleRoom  bool,
              rent        decimal(15,2),
-             PRIMARY KEY (RoomNr, KitchenNr, BuildingID)
+             PRIMARY KEY(RoomNr, KitchenNr, BuildingID)
              );
 
 
@@ -90,11 +88,9 @@ CREATE TABLE Booking
             (ResID       CHAR(5),
              BookID      varchar(8),
              PRIMARY KEY(ResID, BookID),
-             FOREIGN KEY(ResID) REFERENCES Resident(ResID),
+             FOREIGN KEY(ResID) REFERENCES Resident(ResID) ON DELETE SET NULL,
              FOREIGN KEY(BookID) REFERENCES BookingHistory(BookID)
              );
-
-
 
              
 CREATE TABLE Item
@@ -121,13 +117,10 @@ CREATE TABLE Lives
              BuildingID	VARCHAR(2),
              PRIMARY KEY(ResID),
              FOREIGN KEY(ResID) REFERENCES Resident(ResID),
-             FOREIGN KEY(KitchenNr, RoomNr, BuildingID) REFERENCES Rooms(KitchenNr, RoomNr, BuildingID) 
+             FOREIGN KEY(RoomNr, KitchenNr, BuildingID) REFERENCES Rooms(RoomNr, KitchenNr, BuildingID) 
              );
              
              
-
-
-
 
 
 
