@@ -88,8 +88,8 @@ CREATE TABLE Booking
             (ResID       CHAR(5),
              BookID      varchar(8),
              PRIMARY KEY(ResID, BookID),
-             FOREIGN KEY(ResID) REFERENCES Resident(ResID) ON DELETE SET NULL,
-             FOREIGN KEY(BookID) REFERENCES BookingHistory(BookID)
+             FOREIGN KEY(ResID) REFERENCES Resident(ResID) ON UPDATE CASCADE,
+             FOREIGN KEY(BookID) REFERENCES BookingHistory(BookID) ON UPDATE CASCADE
              );
 
              
@@ -97,8 +97,8 @@ CREATE TABLE Item
             (BookID      varchar(8),
              ItemID      varchar(3),
              PRIMARY KEY(BookID, ItemID),
-             FOREIGN KEY(ItemID) REFERENCES LaundryRoom(ItemID),
-             FOREIGN KEY(ItemID) REFERENCES Boats(ItemID)
+             FOREIGN KEY(ItemID) REFERENCES LaundryRoom(ItemID) ON UPDATE CASCADE ON DELETE CASCADE,
+             FOREIGN KEY(ItemID) REFERENCES Boats(ItemID) ON UPDATE CASCADE ON DELETE CASCADE
              );
              
              
@@ -106,8 +106,8 @@ CREATE TABLE Owes
 			(ResID      CHAR(5),
 			 BillID     varchar(16),
              PRIMARY KEY(ResID, BillID),
-             FOREIGN KEY(ResID) REFERENCES Resident(ResID),
-             FOREIGN KEY(BillID) REFERENCES Bills(BillID)
+             FOREIGN KEY(ResID) REFERENCES Resident(ResID) ON DELETE CASCADE ON UPDATE CASCADE,
+             FOREIGN KEY(BillID) REFERENCES Bills(BillID) ON DELETE CASCADE ON UPDATE CASCADE
              );
             
 CREATE TABLE Lives
@@ -116,8 +116,8 @@ CREATE TABLE Lives
              KitchenNr	VARCHAR(2),
              BuildingID	VARCHAR(2),
              PRIMARY KEY(ResID),
-             FOREIGN KEY(ResID) REFERENCES Resident(ResID),
-             FOREIGN KEY(RoomNr, KitchenNr, BuildingID) REFERENCES Rooms(RoomNr, KitchenNr, BuildingID) 
+             FOREIGN KEY(ResID) REFERENCES Resident(ResID) ON DELETE CASCADE ON UPDATE CASCADE,
+             FOREIGN KEY(RoomNr, KitchenNr, BuildingID) REFERENCES Rooms(RoomNr, KitchenNr, BuildingID) ON DELETE CASCADE ON UPDATE CASCADE
              );
              
              
