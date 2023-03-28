@@ -5,7 +5,7 @@
 
 -- #CREATE SHOULD ONLY RUN ONCE
 
-DROP DATABASE IF EXISTS Kollegiedb;
+DROP DATABASE IF EXISTS KollegieDB;
 CREATE DATABASE KollegieDB;
 
 
@@ -78,7 +78,7 @@ CREATE TABLE Boats
 
 
 CREATE TABLE BookingHistory
-			(BookID		    varchar(8),
+			(BookID		    int(8) AUTO_INCREMENT,
              TimeSlot	    varchar(20),
              PRIMARY KEY(BookID)
              );
