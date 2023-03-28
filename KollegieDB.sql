@@ -48,16 +48,7 @@ CREATE TABLE Rooms
              rent        decimal(15,2),
              PRIMARY KEY (RoomNr, KitchenNr, BuildingID)
              );
-            
-CREATE TABLE Lives
-			(ResID		CHAR(5),
-			 RoomNr	 	VARCHAR(2),
-             KitchenNr	VARCHAR(2),
-             BuildingID	VARCHAR(2),
-             PRIMARY KEY(ResID),
-             FOREIGN KEY (KitchenNr, RoomNr, BuildingID) REFERENCES Rooms(KitchenNr, RoomNr, BuildingID) 
-             ON DELETE SET NULL
-             );
+
 
 
 CREATE TABLE Bills
@@ -93,24 +84,32 @@ CREATE TABLE Booking
              PRIMARY KEY(ResID, BookID)
              );
 
-CREATE TABLE Item
-            (BookID      varchar(8),
-             ItemID      varchar(3),
-             PRIMARY KEY(BookID, ItemID)
-             );
-             
 
 
 CREATE TABLE BookingHistory
 			(BookID		    varchar(8),
-             ItemID         varchar(3),
              TimeSlot	    varchar(20),
-             PRIMARY KEY(BookID), 
-             FOREIGN KEY(ItemID) REFERENCES Boats(ItemID) ON DELETE SET NULL,
-             FOREIGN KEY(ItemID) REFERENCES Laundry(ItemID) ON DELETE SET NULL
+             PRIMARY KEY(BookID)
              );
-
-
+             
+CREATE TABLE Item
+            (BookID      varchar(8),
+             ItemID      varchar(3),
+             PRIMARY KEY(BookID, ItemID),
+             FOREIGN KEY(ItemID) REFERENCES LaundryRoom(ItemID),
+             FOREIGN KEY(ItemID) REFERENCES Boats(ItemID)
+             );
+             
+            
+CREATE TABLE Lives
+			(ResID		CHAR(5),
+			 RoomNr	 	VARCHAR(2),
+             KitchenNr	VARCHAR(2),
+             BuildingID	VARCHAR(2),
+             PRIMARY KEY(ResID),
+             FOREIGN KEY (KitchenNr, RoomNr, BuildingID) REFERENCES Rooms(KitchenNr, RoomNr, BuildingID) 
+             ON DELETE SET NULL
+             );
              
              
 
