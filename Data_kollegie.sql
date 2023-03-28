@@ -3,27 +3,26 @@
 
 
 INSERT Resident VALUES
-(00001, Ahmed Abdullah, ahmed@gmail.com, 10297362, 7563455093),
-(81838, Spencer Lloyd, werwe@hellsmoney.com, 5407569056, 96941657),
-(81193, Alexis Robbins, alekseu6@suksesboss.com, 8944651583, 66192438),
-(77612, Luther Gibbons, nbyrd568@allfrree.xyz, 7803423372, 30771149),
-(09208, Big Man Shaq, babyj23@gcantikored.pw, 9658009093, 35913717),
-(59301, Moe Lester, scottvw1@hulas.us, 0168545519, 55353104),
-(80033, Chris P. Bacon, cedjoe@sonophon.ru, 7404142804, 41359985),
-(64910, Ben Dover, shainurovaelena@bukanimers.com, 8132307954, 16744280),
-(36593, Torben Torp, hornyboy19474@boranora.com, 5125239167, 32669505),
-(30777, Lars Larsen Muhammed, gmfam@menuyul.club, 2288653373, 98560359),
-(76179, Malthe BR. Esler, lillepik@bigboysclub.dk, 2574810273, 67446187),
-(93194, Juliet Fernandez, giomelos@menuyul.club, 1926756075, 03272464),
-(27183, Laila Andersen, pfqlug9yix@clk2020.info, 6344800239, 86397684),
-(21827, Sugma Kok, bulikina@bukanimers.com, 5297883252, 78760567),
-(52923, Dean Mohr, azamyt@greendike.com, 2648095915, 80488983),
-(40938, Frida Torp, frida@torp.family.dk, 1388332969, 95671075),
-(62775, Uffe Torp, uffe@torp.family.dk, 7630240667, 32706604),
-(99798, Steffen Torp, steffen@torp.family.dk, 7299741802, 32399798),
-(03934, Johanne Torp, johanne@torp.family.dk, 2977226786, 65147817),
-(13732, Kristine Torp, kristine@torp.family.dk, 3196243048, 63825321);
-
+("00001", "Ahmed Abdullah", "ahmed@gmail.com", "10297362", "7563455093"),
+("81838", "Spencer Lloyd", "werwe@hellsmoney.com", "54075690", "96941657"),
+("81193", "Alexis Robbins", "alekseu6@suksesboss.com", "89441583", "66192438"),
+("77612", "Luther Gibbons", "nbyrd568@allfrree.xyz", "78033372", "30771149"),
+("09208", "Big Man Shaq", "babyj23@gcantikored.pw", "96509093", "35913717"),
+("59301", "Moe Lester", "scottvw1@hulas.us", "01685455", "55353104"),
+("80033", "Chris P. Bacon", "cedjoe@sonophon.ru", "74142804", "41359985"),
+("64910", "Ben Dover", "shainurovaelena@bukanimers.com", "81323954", "16744280"),
+("36593", "Torben Torp", "hornyboy19474@boranora.com", "51252167", "32669505"),
+("30777", "Lars Larsen Muhammed", "gmfam@menuyul.club", "22653373", "98560359"),
+("76179", "Malthe BR. Esler", "lillepik@bigboysclub.dk", "74810273", "67446187"),
+("93194", "Juliet Fernandez", "giomelos@menuyul.club", "26756075", "03272464"),
+("27183", "Laila Andersen", "pfqlug9yix@clk2020.info", "64800239", "86397684"),
+("21827", "Sugma Kok", "bulikina@bukanimers.com", "52978832", "78760567"),
+("52923", "Dean Mohr", "azamyt@greendike.com", "26480959", "80488983"),
+("40938", "Frida Torp", "frida@torp.family.dk", "13883969", "95671075"),
+("62775", "Uffe Torp", "uffe@torp.family.dk", "76302667", "32706604"),
+("99798", "Steffen Torp", "steffen@torp.family.dk", "79741802", "32399798"),
+("03934", "Johanne Torp", "johanne@torp.family.dk", "29726786", "65147817"),
+("13732", "Kristine Torp", "kristine@torp.family.dk", "31243048", "63825321");
 
 INSERT ROOMS VALUES
 (01, 1, A, False, False),
@@ -56,6 +55,27 @@ INSERT ROOMS VALUES
 (03, 2, B, True, False),
 (04, 2, B, True, True),
 (05, 2, B, True, False);
+
+
+INSERT Item VALUES
+("19821740", 'L01'),
+("4a42277d", 'L02'),
+("28ecf826", "L04"),
+("faw21440", 'B01'),
+("4a22212d", 'B02'),
+("98edw826", "B04");
+
+
+INSERT BookingHistory VALUES
+("19821740", ,00001),
+("4a42277d", ),
+("28ecf826", ),
+("faw21440", ),
+("4a22212d", ),
+("98edw826", );
+
+
+
 
 
 
