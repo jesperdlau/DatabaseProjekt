@@ -82,7 +82,17 @@ INSERT Lives VALUES
 (13732, 03, 2, A);
 
 
-
+INSERT Laundry VALUES
+    ('L01', 'Vask', False),
+    ('L02', 'Vask', False),
+    ('L03', 'Tørre', False),
+    ('L04', 'Tørre', True);
+    
+INSERT Boats VALUES
+    ('B01', 'W.T. Frigg', 'Kano', False),
+    ('B02', 'Malthe Boatsler', 'Kano', True),
+    ('B03', 'Bo(at)', 'Kano', False),
+    ('B04', 'Bloat', 'Kajak', False);
 
 
 
